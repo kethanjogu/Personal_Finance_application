@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 //import { useFetch } from "@/hooks/use-fetch";
 import useFetch from "@/hooks/use-fetch";
-import { updateDefaultAccount } from "@/action/account";
+import { updateDefaultAccount } from "@/actions/account";
 import { useEffect } from "react";
 import { toast } from "sonner";
 

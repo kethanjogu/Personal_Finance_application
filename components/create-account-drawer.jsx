@@ -9,7 +9,7 @@ import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import useFetch from "@/hooks/use-fetch";
 
-import { createAccount } from "@/action/dashboard";
+import { createAccount } from "@/actions/dashboard";
 import {
   Drawer,
   DrawerContent,
