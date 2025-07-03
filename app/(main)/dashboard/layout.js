@@ -1,10 +1,10 @@
 import React from 'react'
 
 import { BarLoader } from "react-spinners";
-import DashboardPage from "./page";
+import Dashboardpage from "./page";
 import { Suspense } from "react";
 
-const Dashboardlayout = () =>{
+export default function Dashboardlayout (){
   return (
 
      <div className="px-5">
@@ -12,12 +12,11 @@ const Dashboardlayout = () =>{
   Dashboard
 </h1>
 
-    
       <Suspense
        fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
 
       >
-        <DashboardPage />
+        <Dashboardpage />
       </Suspense>
     </div>
    
@@ -26,4 +25,4 @@ const Dashboardlayout = () =>{
   );
 }
 
-export default Dashboardlayout ;
+//export default Dashboardlayout ;

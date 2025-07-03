@@ -1,4 +1,3 @@
-"use client";
 
 import { getUserAccounts } from '@/action/dashboard';
 import CreateAccountDrawer from '@/components/create-account-drawer';
@@ -9,10 +8,10 @@ import { Plus } from "lucide-react";
 
 import React from 'react'
 
-async function Dashboardpage () {
+export default async function  Dashboardpage () {
   const accounts = await getUserAccounts();
 
-  console.log(accounts);
+
   return (
     <div className='px-5'> 
     
@@ -43,4 +42,3 @@ async function Dashboardpage () {
   );
 };
 
-export default Dashboardpage ;

@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import useFetch from "@/hook/use-fetch";
+import useFetch from "@/hooks/use-fetch";
 
 import { createAccount } from "@/action/dashboard";
 import {
@@ -195,4 +195,4 @@ const {
   )
 }
 
-export default CreateAccountDrawer
+export default CreateAccountDrawer;
