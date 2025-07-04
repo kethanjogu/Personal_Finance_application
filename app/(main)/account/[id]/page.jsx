@@ -6,9 +6,9 @@ import { TransactionTable } from "../_components/transaction-table";
 import { getAccountWithTransactions } from "@/actions/account";
 import { notFound } from "next/navigation";
 
-const AccountsPage =  async ({ params }) => {
+export default async function AccountPage({ params }) {
 
-  const accountData = await getAccountWithTransactions(params.id);
+const accountData = await getAccountWithTransactions(params.id);
 
  if (!accountData) {
     notFound();
@@ -19,8 +19,9 @@ const AccountsPage =  async ({ params }) => {
 
   
   return (
-   <div className="space-y-8 px-5">
-      <div className="flex gap-4 items-end justify-between">
+<div className="space-y-8 px-5">
+
+    <div className = "px-5 flex gap-4 items-end justify-between">
         <div>
          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight capitalize text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-purple-600">
   {account.name}
@@ -40,14 +41,15 @@ const AccountsPage =  async ({ params }) => {
             {account._count.transactions} Transactions
           </p>
         </div>
-      </div>
-
+      
+</div>
          {/* Transactions Table */}
-      <Suspense
-        fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
-      >
-        < TransactionTable transactions={transactions} />
-      </Suspense>
+     <Suspense fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
+ >
+  <TransactionTable transactions={transactions} />
+</Suspense>
+
+
   </div>
 
   
@@ -56,4 +58,3 @@ const AccountsPage =  async ({ params }) => {
 
 }
 
-export default AccountsPage;
