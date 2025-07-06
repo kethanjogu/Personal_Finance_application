@@ -1,19 +1,22 @@
-
+import { getDashboardData } from "@/actions/dashboard";
 import { getUserAccounts } from '@/actions/dashboard';
 import CreateAccountDrawer from '@/components/create-account-drawer';
 import { Card, CardContent } from "@/components/ui/card";
 import { Accountcard } from "./_components/account-card";
 import { BudgetProgress } from "./_components/budget-progress";
 import { getCurrentBudget } from "@/actions/budget";
-
+import { DashboardOverview } from "./_components/transaction-overview";
 
 import { Plus } from "lucide-react";
 
 import React from 'react'
 
 export default async function  Dashboardpage () {
-  const accounts = await getUserAccounts();
-
+ // const accounts = await getUserAccounts();
+ const [accounts, transactions] = await Promise.all([
+    getUserAccounts(),
+    getDashboardData(),
+  ]);
 
   const defaultAccount = accounts?.find((account) => account.isDefault);
 
@@ -35,6 +38,11 @@ export default async function  Dashboardpage () {
 
 
       {/* Dashboard Overview */}
+             <DashboardOverview
+        accounts={accounts}
+        transactions={transactions || []}
+      />
+
 
 
            {/* Accounts Grid */}

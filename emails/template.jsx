@@ -46,7 +46,7 @@ const PREVIEW_DATA = {
 };
 
 export default function EmailTemplate({
-  userName = "",
+  userName = "kethan",
   type = "monthly-report",
   data = {},
 }) {
